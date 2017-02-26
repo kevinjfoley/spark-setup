@@ -15,3 +15,7 @@ export PATH=$SPARK_HOME/bin:$PATH
 #Add ssh key
 eval $(ssh-agent -s)
 ssh-add /data/.ssh/id_rsa
+
+#Git config
+git config --global user.name "Kevin Foley"
+git config --global user.email "kfoley15@gmail.com"
