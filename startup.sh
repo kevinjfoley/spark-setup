@@ -9,7 +9,9 @@ mount -t ext4 /dev/xvdf /data
 /data/start_postgres.sh
 
 #Create file to set environment variables
-echo "PATH=$PATH:$HOME/bin" > /etc/profile.d/w205_spark_var.sh
-echo "export PATH" >> /etc/profile.d/w205_spark_var.sh
+export SPARK_HOME=/data/spark15
+export PATH=$SPARK_HOME/bin:$PATH
 
-export PATH=$SPARK_HOME/bin:$PATH >> /etc/profile.d/w205_spark_var.sh
+#Add ssh key
+eval $(ssh-agent -s)
+ssh-add /data/.ssh/id_rsa
